@@ -1,0 +1,83 @@
+@import "../src/normalize.css";
+@keyframes select {
+  from {
+    transform: translate(0px, 0px) scale(1, 1);
+  }
+  to {
+    transform: translate(-380px, -100px) scale(1.35, 1.35);
+  }
+}
+
+.root {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(214, 47%, 23%);
+}
+.containerbuttons {
+  display: flex;
+  justify-content: center;
+  background-image: url(../src/images/bg-triangle.svg) no-repeat;
+  background-position: center;
+  background-position-y: 340px;
+}
+.resultado {
+  display: flex;
+  justify-content: center;
+}
+.imagen {
+  position: absolute;
+  top: 340px;
+  z-index: 0;
+  transition: tranform 3s, 0.8s;
+}
+.rock {
+  position: relative;
+  z-index: 1;
+  top: 485px;
+  left: 150px;
+  background: url(../src/images/icon-rock.svg) no-repeat;
+  background-position: center;
+  background-color: #f0f0f1;
+  padding: 3.5rem;
+  border: 1.15rem solid hsl(349, 71%, 52%);
+  border-radius: 50%;
+  transition: transform 3s, 1.5s;
+}
+.paper {
+  position: relative;
+  z-index: 1;
+  top: 280px;
+  right: 150px;
+  background: url(../src/images/icon-paper.svg) no-repeat;
+  background-position: center;
+  background-color: #f0f0f1;
+  padding: 3.5rem;
+  border: 1.15rem solid hsl(230, 89%, 62%);
+  border-radius: 50%;
+  transition: transform 3s, 1.5s;
+}
+.scissors {
+  position: relative;
+  z-index: 1;
+  top: 280px;
+  right: 10px;
+  background: url(../src/images/icon-scissors.svg) no-repeat;
+  background-position: center;
+  background-color: #f0f0f1;
+  padding: 3.5rem;
+  border: 1.15rem solid hsl(39, 89%, 49%);
+  border-radius: 50%;
+  transition: transform 3s, 1.5s;
+}
+.rock:active {
+  box-shadow: 0 10px rgb(27, 26, 26);
+  transform: translateY(4px);
+}
+.paper:active {
+  box-shadow: 0 10px rgb(27, 26, 26);
+  transform: translateY(4px);
+}
+.scissors:active {
+  box-shadow: 0 10px rgb(27, 26, 26);
+  transform: translateY(4px);
+}
