@@ -3,20 +3,27 @@ import "./style.css";
 import { juego, resultado, rock1, paper1, scissors1 } from "../src/function";
 const root: Element | null = document.querySelector("#app");
 let containerbuttons: Element | null = document.createElement("div");
-//let containermenu: Element | null = document.createElement("div");
-let imagen = document.createElement("img");
+let containermenu: Element | null = document.createElement("div");
 let rock: Element | null = document.createElement("button");
 let paper: Element | null = document.createElement("button");
 let scissors: Element | null = document.createElement("button");
+let restart: Element | null = document.createElement("button");
+let imagenfondo = document.createElement("img");
+let imagenarriba = document.createElement("img");
 
-imagen.src = "../src/images/bg-triangle.svg";
+imagenfondo.src = "../src/images/bg-triangle.svg";
+imagenarriba.src = "../src/images/logo.svg";
+restart.textContent = "PLAY AGAIN";
 
-imagen.classList.add("imagen");
 containerbuttons.classList.add("containerbuttons");
+containermenu.classList.add("containermenu");
+resultado.classList.add("resultado");
 rock.classList.add("rock");
 paper.classList.add("paper");
 scissors.classList.add("scissors");
-resultado.classList.add("resultado");
+imagenfondo.classList.add("imagen");
+imagenarriba.classList.add("imagenarriba");
+restart.classList.add("restart");
 root?.classList.add("root");
 
 containerbuttons.appendChild(rock);
@@ -25,8 +32,11 @@ containerbuttons.appendChild(scissors);
 containerbuttons.appendChild(rock1);
 containerbuttons.appendChild(paper1);
 containerbuttons.appendChild(scissors1);
-containerbuttons.appendChild(imagen);
+containerbuttons.appendChild(imagenfondo);
+containermenu.appendChild(restart);
+containermenu.appendChild(imagenarriba);
 root?.appendChild(containerbuttons);
+root?.appendChild(containermenu);
 root?.appendChild(resultado);
 
 rock.addEventListener("click", () => {
@@ -35,7 +45,8 @@ rock.addEventListener("click", () => {
     "transform: translate(-380px, -100px) scale(1.4);"
   );
   juego(1);
-  imagen?.setAttribute("style", "opacity: -100%; z-index: -1");
+  imagenfondo?.setAttribute("style", "opacity: -100%; z-index: -1");
+  restart?.setAttribute("style", "width: 12rem; z-index: 1");
 });
 
 paper.addEventListener("click", () => {
@@ -44,7 +55,8 @@ paper.addEventListener("click", () => {
     "transform: translate(-280px, 90px) scale(1.4);"
   );
   juego(2);
-  imagen?.setAttribute("style", "opacity: -100%; z-index: -1");
+  imagenfondo?.setAttribute("style", "opacity: -100%; z-index: -1");
+  restart?.setAttribute("style", "width: 12rem; z-index: 1");
 });
 
 scissors.addEventListener("click", () => {
@@ -53,7 +65,8 @@ scissors.addEventListener("click", () => {
     "transform: translate(-490px, 90px) scale(1.4);"
   );
   juego(3);
-  imagen?.setAttribute("style", "opacity: -100%; z-index: -1");
+  imagenfondo?.setAttribute("style", "opacity: -100%; z-index: -1");
+  restart?.setAttribute("style", "width: 12rem; z-index: 1");
 });
 
 export { rock, paper, scissors, root };

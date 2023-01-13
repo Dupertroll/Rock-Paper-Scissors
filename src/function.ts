@@ -19,21 +19,24 @@ function juego(comprobar: number) {
       paper?.setAttribute("style", "opacity: -100%; z-index: -1");
       scissors?.setAttribute("style", "opacity: -100%; z-index: -1");
 
-      resultado.textContent = "empate";
+      resultado.textContent = "TIE";
+      resultado.setAttribute("style", "opacity:100%;");
     } else if (rival < 2) {
       paper?.setAttribute(
         "style",
         "z-index: 1; transform: translate(530px, 95px) scale(1.4);"
       );
       scissors?.setAttribute("style", "opacity: -100%; z-index: -1");
-      resultado.textContent = "perdiste";
+      resultado.textContent = "YOU LOST";
+      resultado.setAttribute("style", "opacity:100%;");
     } else if (rival > 2) {
       scissors?.setAttribute(
         "style",
         "z-index: 1; transform: translate(250px, 100px) scale(1.4);"
       );
       paper?.setAttribute("style", "opacity: -100%; z-index: -1");
-      resultado.textContent = "ganaste";
+      resultado.textContent = "YOU WIN";
+      resultado.setAttribute("style", "opacity:100%;");
     }
   }
   if (comprobar == 2) {
@@ -45,7 +48,8 @@ function juego(comprobar: number) {
         "z-index: 1; transform: translate(400px, -100px) scale(1.4);"
       );
       scissors?.setAttribute("style", "opacity: -100%; z-index: -1");
-      resultado.textContent = "ganaste";
+      resultado.textContent = "YOU WIN";
+      resultado.setAttribute("style", "opacity:100%;");
     } else if (rival < 2) {
       paper1.setAttribute(
         "style",
@@ -53,14 +57,16 @@ function juego(comprobar: number) {
       );
       rock?.setAttribute("style", "opacity: -100%; z-index: -1");
       scissors?.setAttribute("style", "opacity: -100%; z-index: -1");
-      resultado.textContent = "empate";
+      resultado.textContent = "TIE";
+      resultado.setAttribute("style", "opacity:100%;");
     } else if (rival > 2) {
       scissors?.setAttribute(
         "style",
-        "z-index: 1; transform: translate(320px, 95px) scale(1.4);"
+        "z-index: 1; transform: translate(260px, 95px) scale(1.4);"
       );
       rock?.setAttribute("style", "opacity: -100%; z-index: -1");
-      resultado.textContent = "perdiste";
+      resultado.textContent = "YOU LOST";
+      resultado.setAttribute("style", "opacity:100%;");
     }
   }
   if (comprobar == 3) {
@@ -71,14 +77,16 @@ function juego(comprobar: number) {
         "z-index: 1; transform: translate(380px, -95px) scale(1.4);"
       );
       paper?.setAttribute("style", "opacity: -100%; z-index: -1");
-      resultado.textContent = "perdiste";
+      resultado.textContent = "YOU LOST";
+      resultado.setAttribute("style", "opacity:100%;");
     } else if (rival < 2) {
       paper?.setAttribute(
         "style",
         "z-index: 1; transform: translate(450px, 100px) scale(1.4);"
       );
       rock?.setAttribute("style", "opacity: -100%; z-index: -1");
-      resultado.textContent = "ganaste";
+      resultado.textContent = "YOU WIN";
+      resultado.setAttribute("style", "opacity:100%;");
     } else if (rival > 2) {
       scissors1.setAttribute(
         "style",
@@ -86,7 +94,8 @@ function juego(comprobar: number) {
       );
       rock?.setAttribute("style", "opacity: -100%; z-index: -1");
       paper?.setAttribute("style", "opacity: -100%; z-index: -1");
-      resultado.textContent = "empate";
+      resultado.textContent = "TIE";
+      resultado.setAttribute("style", "opacity:100%;");
     }
   }
 }

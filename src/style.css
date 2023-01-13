@@ -1,17 +1,11 @@
 @import "../src/normalize.css";
-@keyframes select {
-  from {
-    transform: translate(0px, 0px) scale(1, 1);
-  }
-  to {
-    transform: translate(-380px, -100px) scale(1.4, 1.4);
-  }
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&family=Big+Shoulders+Display:wght@700&display=swap");
 .root {
   width: 100vw;
   height: 100vh;
   background-color: hsl(214, 47%, 23%);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  color: whitesmoke;
 }
 .containerbuttons {
   display: flex;
@@ -20,15 +14,51 @@
   background-position: center;
   background-position-y: 340px;
 }
+.containermenu {
+  display: flex;
+  position: absolute;
+  padding: 1rem;
+  left: 530px;
+  top: 30px;
+  width: 480px;
+  height: 75px;
+  justify-content: center;
+  flex-direction: row;
+  background-color: transparent;
+  border-radius: 0.7rem;
+  border: 2px solid rgba(247, 247, 247, 0.329);
+}
+.restart {
+  position: absolute;
+  z-index: -1;
+  width: 7rem;
+  left: 145px;
+  top: 385px;
+  font-size: 20px;
+  border-radius: 0.5rem;
+  background-color: hsl(80, 27.27%, 97.84%);
+  border: 2.5px solid hsl(80, 27.27%, 97.84%);
+  padding: 0.5rem;
+  transition: 1s;
+}
 .resultado {
+  position: relative;
   display: flex;
   justify-content: center;
+  top: 160px;
+  font-size: 2.8rem;
+  opacity: 0%;
+  transition: 2s;
 }
 .imagen {
   position: absolute;
   top: 340px;
   z-index: 0;
   transition: tranform 3s, 0.8s;
+}
+.imagenarriba {
+  position: relative;
+  right: 175px;
 }
 .rock {
   position: relative;
@@ -41,7 +71,7 @@
   padding: 3.5rem;
   border: 1.15rem solid hsl(349, 71%, 52%);
   border-radius: 50%;
-  transition: transform 3s, 1.5s;
+  transition: 1s;
 }
 .rock1 {
   position: absolute;
@@ -54,7 +84,7 @@
   padding: 3.5rem;
   border: 1.15rem solid hsl(349, 71%, 52%);
   border-radius: 50%;
-  transition: 3s;
+  transition: 1s;
 }
 .paper {
   position: relative;
@@ -67,7 +97,7 @@
   padding: 3.5rem;
   border: 1.15rem solid hsl(230, 89%, 62%);
   border-radius: 50%;
-  transition: transform 3s, 1.5s;
+  transition: 1s;
 }
 .paper1 {
   position: absolute;
@@ -80,7 +110,7 @@
   padding: 3.5rem;
   border: 1.15rem solid hsl(230, 89%, 62%);
   border-radius: 50%;
-  transition: 3s;
+  transition: 1s;
 }
 .scissors {
   position: relative;
@@ -93,7 +123,7 @@
   padding: 3.5rem;
   border: 1.15rem solid hsl(39, 89%, 49%);
   border-radius: 50%;
-  transition: transform 3s, 1.5s;
+  transition: 1s;
 }
 .scissors1 {
   position: absolute;
@@ -106,17 +136,23 @@
   padding: 3.5rem;
   border: 1.15rem solid hsl(39, 89%, 49%);
   border-radius: 50%;
-  transition: 3s;
+  transition: 1s;
 }
-.rock:active {
-  box-shadow: 0 10px rgb(27, 26, 26);
-  transform: translateY(4px);
+.rock:hover {
+  transform: scale(1.1);
+  transition: 1s;
 }
-.paper:active {
-  box-shadow: 0 10px rgb(27, 26, 26);
-  transform: translateY(4px);
+.paper:hover {
+  transform: scale(1.1);
+  transition: 1s;
 }
-.scissors:active {
-  box-shadow: 0 10px rgb(27, 26, 26);
-  transform: translateY(4px);
+.scissors:hover {
+  transform: scale(1.1);
+  transition: 1s;
+}
+.restart:hover {
+  transform: scale(1.05);
+  background-color: transparent;
+  transition: 0.7s;
+  color: hsl(80, 27.27%, 97.84%);
 }
