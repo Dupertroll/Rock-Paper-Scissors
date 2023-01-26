@@ -5,6 +5,7 @@ const root: Element | null = document.querySelector("#app");
 let containerbuttons: Element = document.createElement("div");
 let containermenu: Element = document.createElement("div");
 let rules: Element = document.createElement("div");
+let containerscore: Element = document.createElement("div");
 let score: Element = document.createElement("p");
 let resultado: Element = document.createElement("p");
 let rock: Element = document.createElement("button");
