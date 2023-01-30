@@ -1,72 +1,84 @@
 import "./normalize.css";
 import "./style.css";
-import { juego, resultado, rock1, paper1, scissors1 } from "../src/function";
-const root: Element | null = document.querySelector("#app");
-let containerbuttons: Element | null = document.createElement("div");
-let containermenu: Element | null = document.createElement("div");
-let rock: Element | null = document.createElement("button");
-let paper: Element | null = document.createElement("button");
-let scissors: Element | null = document.createElement("button");
-let restart: Element | null = document.createElement("button");
-let imagenfondo = document.createElement("img");
-let imagenarriba = document.createElement("img");
+import {
+  root,
+  juego,
+  disablebuttons,
+  imagenfondo,
+  restartbutton,
+  rock,
+  paper,
+  scissors,
+  rock1,
+  paper1,
+  scissors1,
+  resultado,
+  score,
+  scorenum1,
+  showrules,
+  rules,
+} from "./create";
+localStorage.setItem("score", `${scorenum1}`);
+juego(0);
 
-imagenfondo.src = "../src/images/bg-triangle.svg";
-imagenarriba.src = "../src/images/logo.svg";
-restart.textContent = "PLAY AGAIN";
-
-containerbuttons.classList.add("containerbuttons");
-containermenu.classList.add("containermenu");
-resultado.classList.add("resultado");
-rock.classList.add("rock");
-paper.classList.add("paper");
-scissors.classList.add("scissors");
-imagenfondo.classList.add("imagen");
-imagenarriba.classList.add("imagenarriba");
-restart.classList.add("restart");
-root?.classList.add("root");
-
-containerbuttons.appendChild(rock);
-containerbuttons.appendChild(paper);
-containerbuttons.appendChild(scissors);
-containerbuttons.appendChild(rock1);
-containerbuttons.appendChild(paper1);
-containerbuttons.appendChild(scissors1);
-containerbuttons.appendChild(imagenfondo);
-containermenu.appendChild(restart);
-containermenu.appendChild(imagenarriba);
-root?.appendChild(containerbuttons);
-root?.appendChild(containermenu);
-root?.appendChild(resultado);
-
+let detector: boolean = false;
+score.textContent = `${scorenum1}`;
 rock.addEventListener("click", () => {
-  rock?.setAttribute(
-    "style",
-    "transform: translate(-380px, -100px) scale(1.4);"
-  );
+  disablebuttons();
   juego(1);
-  imagenfondo?.setAttribute("style", "opacity: -100%; z-index: -1");
-  restart?.setAttribute("style", "width: 12rem; z-index: 1");
+
+  imagenfondo?.setAttribute("style", "opacity: -100%; opacity:0%; z-index: -1");
+  restartbutton?.setAttribute("style", "width: 12rem; z-index: 1");
+  console.log(localStorage.getItem("score"));
 });
 
 paper.addEventListener("click", () => {
-  paper?.setAttribute(
-    "style",
-    "transform: translate(-280px, 90px) scale(1.4);"
-  );
+  disablebuttons();
   juego(2);
-  imagenfondo?.setAttribute("style", "opacity: -100%; z-index: -1");
-  restart?.setAttribute("style", "width: 12rem; z-index: 1");
+
+  imagenfondo?.setAttribute("style", "opacity: -100%; opacity:0%; z-index: -1");
+  restartbutton?.setAttribute("style", "width: 12rem; z-index: 1");
+  console.log(localStorage.getItem("score"));
 });
 
 scissors.addEventListener("click", () => {
-  scissors?.setAttribute(
-    "style",
-    "transform: translate(-490px, 90px) scale(1.4);"
-  );
+  disablebuttons();
   juego(3);
-  imagenfondo?.setAttribute("style", "opacity: -100%; z-index: -1");
-  restart?.setAttribute("style", "width: 12rem; z-index: 1");
+
+  imagenfondo?.setAttribute("style", "opacity: -100%; opacity:0%; z-index: -1");
+  restartbutton?.setAttribute("style", "width: 12rem; z-index: 1");
+  console.log(localStorage.getItem("score"));
 });
 
+restartbutton.addEventListener("click", () => {
+  rock?.setAttribute("style", "z-index: 1;top: 485px;left: 150px;");
+  paper?.setAttribute("style", "z-index: 1;top: 280px;right: 150px;");
+  scissors?.setAttribute("style", "z-index: 1;top: 280px;right: 10px;");
+  rock1.setAttribute("style", "");
+  paper1.setAttribute("style", "");
+  scissors1.setAttribute("style", "");
+
+  restartbutton?.setAttribute(
+    "style",
+    "z-index: -1;width: 7rem;left: 145px;top: 385px;"
+  );
+
+  resultado.setAttribute("style", "top: 160px;");
+  imagenfondo.setAttribute("style", "z-index: 0;");
+  rock?.removeAttribute("disabled");
+  paper?.removeAttribute("disabled");
+  scissors?.removeAttribute("disabled");
+});
+showrules.addEventListener("click", () => {
+  if (detector == true) {
+    rules.setAttribute(
+      "style",
+      "transition: 1s; transform: scale(0.05); z-index: -1;"
+    );
+    detector = false;
+  } else if (detector == false) {
+    detector = true;
+    rules.setAttribute("style", "transform: scale(1); z-index: 1; ");
+  }
+});
 export { rock, paper, scissors, root };
