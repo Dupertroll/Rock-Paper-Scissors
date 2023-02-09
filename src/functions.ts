@@ -26,7 +26,7 @@ function juego(comprobar: number) {
     if (rival < 1) {
       rock1.setAttribute(
         "style",
-        "z-index: 1; transform: translate(380px, -100px) scale(1.4);"
+        "z-index: 1; transform: translate(380px, -101px) scale(1.4);"
       );
       rock.setAttribute(
         "style",
