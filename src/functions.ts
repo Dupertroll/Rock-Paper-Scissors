@@ -9,10 +9,9 @@ import {
   score,
   restartscore,
 } from "./create";
-
-let scorenum = localStorage.getItem("score");
 let scorenum1 = 0;
-scorenum1 = parseInt(scorenum!, 10);
+localStorage.setItem("score", `${scorenum1}`);
+let scorenum = localStorage.getItem("score");
 
 function juego(comprobar: number) {
   restartscore.addEventListener("click", () => {
@@ -24,6 +23,7 @@ function juego(comprobar: number) {
     let rival: number = Math.random() * (3 - 0) + 0;
 
     if (rival < 1) {
+      // Empate
       rock1.setAttribute(
         "style",
         "z-index: 1; transform: translate(380px, -100px) scale(1.4);"
@@ -39,6 +39,8 @@ function juego(comprobar: number) {
       resultado.setAttribute("style", "z-index: 0; opacity:100%;");
       score.textContent = `${scorenum1}`;
     } else if (rival < 2) {
+      // Perder
+
       paper.setAttribute(
         "style",
         "z-index: 1; transform: translate(530px, 95px) scale(1.4); filter: drop-shadow(0 0 9.5rem rgba(255, 255, 255, 0.896));"
@@ -54,6 +56,7 @@ function juego(comprobar: number) {
       resultado.setAttribute("style", "z-index: 0; opacity:100%;");
       score.textContent = `${scorenum1}`;
     } else if (rival > 2) {
+      // Ganar
       scissors.setAttribute(
         "style",
         "z-index: 1; transform: translate(250px, 100px) scale(1.4);"
@@ -74,6 +77,8 @@ function juego(comprobar: number) {
     let rival: number = Math.random() * (3 - 0) + 0;
 
     if (rival < 1) {
+      // Ganar
+
       rock.setAttribute(
         "style",
         "z-index: 1; transform: translate(400px, -100px) scale(1.4); filter: drop-shadow(0 0 9.5rem rgba(255, 255, 255, 0.896));"
@@ -89,6 +94,8 @@ function juego(comprobar: number) {
       resultado.setAttribute("style", "z-index: 0; opacity:100%;");
       score.textContent = `${scorenum1}`;
     } else if (rival < 2) {
+      // Empate
+
       paper1.setAttribute(
         "style",
         "z-index: 1; transform: translate(530px, 90px) scale(1.4);"
@@ -103,6 +110,8 @@ function juego(comprobar: number) {
       resultado.setAttribute("style", "z-index: 0; opacity:100%;");
       score.textContent = `${scorenum1}`;
     } else if (rival > 2) {
+      // Perder
+
       scissors.setAttribute(
         "style",
         "z-index: 1; transform: translate(260px, 95px) scale(1.4); filter: drop-shadow(0 0 9.5rem rgba(255, 255, 255, 0.896));"
@@ -122,6 +131,7 @@ function juego(comprobar: number) {
   if (comprobar == 3) {
     let rival: number = Math.random() * (3 - 0) + 0;
     if (rival < 1) {
+      // Perder
       rock.setAttribute(
         "style",
         "z-index: 1; transform: translate(380px, -95px) scale(1.4); filter: drop-shadow(0 0 9.5rem rgba(255, 255, 255, 0.896));"
@@ -137,6 +147,7 @@ function juego(comprobar: number) {
       resultado.setAttribute("style", "z-index: 0; opacity:100%;");
       score.textContent = `${scorenum1}`;
     } else if (rival < 2) {
+      // Ganar
       paper.setAttribute(
         "style",
         "z-index: 1; transform: translate(500px, 100px) scale(1.4);"
@@ -152,6 +163,8 @@ function juego(comprobar: number) {
       resultado.setAttribute("style", "z-index: 0; opacity:100%;");
       score.textContent = `${scorenum1}`;
     } else if (rival > 2) {
+      // Empate
+
       scissors1.setAttribute(
         "style",
         "z-index: 1; transform: translate(230px, 95px) scale(1.4);"
